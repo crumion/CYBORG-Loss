@@ -24,6 +24,7 @@ def return_pytorch04_xception(pretrained=True,num_classes=1000):
         model.fc = model.last_linear
         del model.last_linear
         try:
+            # add relative path here so it works out of the box
             state_dict = torch.load('/scratch365/aboyd3/SynFace/xception/model/xception-b5690688.pth')
         except:
             state_dict = torch.load('/home/aidan/Scratch365/SynFace/xception/model/xception-b5690688.pth')
